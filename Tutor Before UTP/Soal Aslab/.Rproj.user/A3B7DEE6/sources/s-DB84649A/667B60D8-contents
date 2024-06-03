@@ -1,0 +1,13 @@
+# 1
+result <- read.csv('02/Result.csv', na.strings = c('', NA), fileEncoding = 'UTF-08-BOM')
+result <- na.omit(result)
+
+vis_1 <- table(result$Question.2)
+vis_1
+
+pie(
+  vis_1,
+  col = rainbow(length(vis_1)),
+  labels = paste(vis_1/sum(vis_1)*100)
+)
+
